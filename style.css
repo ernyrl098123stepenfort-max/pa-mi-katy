@@ -1,0 +1,479 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family: "Segoe UI", sans-serif;
+    overflow:hidden;
+
+    background:linear-gradient(
+        135deg,
+        #ffafcc,
+        #ffc8dd,
+        #ffe5ec
+    );
+
+    height:100vh;
+
+}
+
+/* Corazones */
+
+#hearts{
+
+    position:fixed;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    pointer-events:none;
+
+}
+
+.heart{
+
+    position:absolute;
+    color:#ff2e63;
+    animation:float linear forwards;
+
+}
+
+@keyframes float{
+
+    from{
+
+        transform:translateY(100vh);
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:translateY(-120vh);
+        opacity:0;
+
+    }
+
+}
+
+/* Bienvenida */
+
+#welcome{
+
+    width:100%;
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+.card{
+
+    width:600px;
+    max-width:90%;
+
+    padding:50px;
+
+    background:rgba(255,255,255,.25);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:25px;
+
+    text-align:center;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+
+    animation:appear 1s;
+
+}
+
+@keyframes appear{
+
+    from{
+
+        transform:translateY(60px);
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:translateY(0);
+        opacity:1;
+
+    }
+
+}
+
+h1{
+
+    font-size:55px;
+    color:white;
+
+}
+
+h2{
+
+    margin-top:10px;
+    color:#d63384;
+    font-size:40px;
+
+}
+
+.texto{
+
+    margin-top:20px;
+
+    color:white;
+
+    font-size:22px;
+
+    line-height:1.6;
+
+}
+
+button{
+
+    margin-top:40px;
+
+    padding:15px 40px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#ff4d8d;
+
+    color:white;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    transform:scale(1.1);
+
+    box-shadow:0 0 25px #ff4d8d;
+
+}
+
+/* Escena 2 */
+
+#story{
+
+    display:none;
+
+}
+/* -------------------- */
+/* ESCENA 2 */
+/* -------------------- */
+
+#story{
+
+    display:none;
+
+    width:100%;
+    height:100vh;
+
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:40px;
+
+}
+
+.story-container{
+
+    width:900px;
+    max-width:90%;
+
+}
+
+#typewriter{
+
+    font-size:42px;
+
+    color:white;
+
+    line-height:1.6;
+
+    min-height:220px;
+
+    text-shadow:0 0 15px rgba(0,0,0,.3);
+
+}
+
+#nextBtn{
+
+    margin-top:50px;
+
+    padding:15px 40px;
+
+    font-size:22px;
+
+}
+#videoSection{
+    display:none;
+    width:100%;
+    height:100vh;
+
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    padding:20px;
+    text-align:center;
+}
+
+/* 📱 VIDEO VERTICAL TIPO REEL */
+#videoRecuerdo{
+    width:min(90vw,380px);
+    height:auto;
+
+    aspect-ratio:9/16;
+    object-fit:cover;
+
+    border-radius:25px;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.4);
+}
+
+/* TEXTO SOBRE VIDEO */
+#videoText{
+    margin-top:18px;
+    color:white;
+    font-size:clamp(18px,4vw,30px);
+    max-width:600px;
+
+    text-shadow:2px 2px 10px rgba(0,0,0,.6);
+
+    opacity:0;
+    transition:1s;
+}
+
+/* BOTÓN */
+#continueVideo{
+    margin-top:25px;
+}
+
+/* PC */
+@media (min-width:768px){
+    #videoRecuerdo{
+        width:360px;
+    }
+}
+/* ===================== */
+/* 💌 SOBRE */
+/* ===================== */
+
+#envelopeSection{
+    width:100%;
+    height:100vh;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+}
+
+#envelope{
+    font-size:120px;
+    cursor:pointer;
+    transition:.3s;
+    animation:floatEnvelope 2s infinite ease-in-out;
+}
+
+#envelope:hover{
+    transform:scale(1.1);
+}
+
+#openText{
+    margin-top:20px;
+    color:white;
+    font-size:22px;
+    text-shadow:0 0 10px rgba(0,0,0,.3);
+}
+
+@keyframes floatEnvelope{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-10px);}
+}
+
+
+/* ===================== */
+/* 📜 CARTA */
+/* ===================== */
+
+#letterSection{
+    width:100%;
+    height:100vh;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    padding:20px;
+}
+
+.letter{
+    width:min(90%,700px);
+    background:white;
+    border-radius:20px;
+
+    padding:40px;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.3);
+
+    font-size:20px;
+    line-height:1.8;
+
+    color:#333;
+
+    min-height:300px;
+
+    animation:openLetter 1s ease;
+}
+
+@keyframes openLetter{
+    from{
+        transform:scale(.5);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+#finalBtn{
+    margin-top:25px;
+}
+/* ===================== */
+/* 💖 FINAL PREGUNTA */
+/* ===================== */
+
+#finalSection{
+    width:100%;
+    height:100vh;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+}
+
+#finalText{
+    color:white;
+    font-size:clamp(28px,5vw,60px);
+    text-shadow:0 0 20px rgba(0,0,0,.4);
+    margin-bottom:40px;
+}
+
+#buttonsFinal{
+    display:flex;
+    gap:30px;
+}
+
+#yesBtn{
+    padding:15px 40px;
+    font-size:22px;
+    border:none;
+    border-radius:50px;
+    background:#ff4d8d;
+    color:white;
+    cursor:pointer;
+    transition:.3s;
+}
+
+#yesBtn:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 25px #ff4d8d;
+}
+
+#noBtn{
+    padding:15px 40px;
+    font-size:22px;
+    border:none;
+    border-radius:50px;
+    background:#666;
+    color:white;
+    cursor:pointer;
+    position:relative;
+}
+
+/* ===================== */
+/* 🎆 FINAL MENSAJE */
+/* ===================== */
+
+#endMessage{
+    width:100%;
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+}
+
+#endMessage h1{
+    color:white;
+    font-size:clamp(30px,6vw,70px);
+    animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+    0%,100%{transform:scale(1);}
+    50%{transform:scale(1.05);}
+}
+html, body{
+    overflow-x:hidden;
+}
+h1{
+    font-size:clamp(28px,6vw,60px);
+}
+
+h2{
+    font-size:clamp(22px,5vw,40px);
+}
+
+p{
+    font-size:clamp(16px,4vw,22px);
+}
+#videoRecuerdo{
+    width:min(90vw,380px);
+    height:auto;
+    border-radius:20px;
+}
+.letter{
+    width:90%;
+    padding:20px;
+    font-size:18px;
+}
+button{
+    font-size:clamp(16px,4vw,22px);
+    padding:12px 25px;
+}
+*{
+    max-width:100%;
+}
+#noBtn{
+    touch-action: none;
+}
